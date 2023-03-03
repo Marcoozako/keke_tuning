@@ -11,6 +11,26 @@
   padding: 50px 0px;
 }
 
+
+.container1 {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-between;
+  margin:auto;
+}
+
+.show1 {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.show {
+  text-align: center;
+  padding: 40px;
+  justify-content: center;
+}
+
 .card {
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
