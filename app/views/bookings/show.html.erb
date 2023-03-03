@@ -1,34 +1,33 @@
     <h1>Booking</h1>
 
-<div class="container1">
-    <div class="show">
-        <h3> Confirmation number: <%= @booking.id %></h3>
-
-        <p>Start : <%= @booking.reservation_begin %> - End : <%= @booking.reservation_end %></p>
-
-        <h2>Transport details :</h2>
-     </div>
-        <div class="show1">
-          <% if @booking.transport.photos.attached? %>
-            <% @booking.transport.photos.each do |photo| %>
-                <%= cl_image_tag photo.key %>
-            <% end %>
-              <% else %>
-            <%= 'No Image' %>
+<div class="container d-flex">
+  <div class="booking-product">
+    <div class="booking-card">
+      <h2> Confirmation number: <%= @booking.id %></h2>
+      <p>Start : <%= @booking.reservation_begin %></p>
+      <p>End : <%= @booking.reservation_end %></p>
+      <p>Price per day : <%= @booking.transport.price %> €</p>
+    </div>
+    <div class="booking-picture">
+      <h2>Transport details :</h2>
+        <% if @booking.transport.photos.attached? %>
+          <% @booking.transport.photos.each do |photo| %>
+            <%= cl_image_tag photo.key, :width=>180, :height=>200, crop: :fill %>
           <% end %>
-        </div>
-      <div class="show">
-          <p> Brand : <%= @booking.transport.brand %></p>
-             <p> Power : <%= @booking.transport.horse %></p>
-             <p> Year : <%= @booking.transport.year %></p>
-             <p> Price per day : <%= @booking.transport.price %>
-            </p>
-
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, recusandae at. Earum incidunt, tenetur sed vel soluta esse optio dignissimos, consectetur quam eum rerum reprehenderit recusandae perferendis exercitationem odit assumenda!
-          Itaque error optio, alias possimus maiores eligendi nostrum sequi, eos nisi excepturi repellendus ea veniam quasi dolore maxime dolorem temporibus, similique commodi laborum. Veritatis, consequuntur? Doloribus consectetur suscipit error nemo?
-          </p>
-      </div>
-          <div class="containers">
-          <div class="btn-home"><%= link_to 'Back to transports', root_path %></div>
-        </div>
+        <% else %>
+          <%= 'No Image' %>
+        <% end %>
+    </div>
+    <div class="booking-description">
+      <h2> Brand : <%= @booking.transport.brand %></h2>
+      <h2> Power : <%= @booking.transport.horse %></h2>
+      <h2> Year : <%= @booking.transport.year %></h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, ipsam repellat, rerum modi explicabo odio ab iste, accusantium dolore saepe eveniet est magni porro animi libero in magnam facere earum.</p>
+    </div>
+  </div>
 </div>
+  <div class="containers">
+  <div class="btn-home"><%= link_to "Home", root_path(@transports), class: "btn btn-primary" %><br /></div>
+  <div class="btn-home"><%= link_to 'Edit', edit_booking_path(@booking.id) %></div>
+
+  </div>
