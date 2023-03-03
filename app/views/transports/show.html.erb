@@ -14,18 +14,14 @@
           <h2> Brand : <%= @transport.brand %></h2>
           <p> Power : <%= @transport.horse %></p>
           <p> Year : <%= @transport.year %></p>
-          <br>
-          <br>
           <h2> Price per day : <%= @transport.price %> $</h2>
-          <br>
-          <br>
-          <br>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nobis consectetur voluptates ex officia maiores vel suscipit necessitatibus est sapiente. Neque, quibusdam. Ab pariatur animi excepturi cum omnis dolore nobis.</p>
       </div>
     </div>
 </div>
 <div class="containers">
   <div class="btn-home"><%= link_to 'Back to transports', root_path %></div>
-  <div class="btn-home"> <%= link_to "Delete", transport_path(@transport.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></div>
   <div class="btn-home"><%= link_to 'Book now', new_transport_booking_path(@transport.id) %></div>
+  <div class="btn-home"><%= link_to 'Edit', edit_transport_path(@transport.id) %></div>
+  <div class="btn-home"> <%= link_to "Delete", transport_path(@transport.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></div>
 </div>
