@@ -2,6 +2,11 @@ class BookingsController < ApplicationController
   before_action :authenticate_user!, except: :home
   before_action :set_bookings, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @bookings = current_user.bookings
+    @transports = current_user.transports
+  end
+
   def new
     @booking = Booking.new
     @transport = Transport.find(params[:transport_id])

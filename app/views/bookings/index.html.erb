@@ -1,0 +1,29 @@
+<h1>Your bookings</h1>
+
+<div class="dashboard d-flex text-white">
+<div class="container1">
+  <div class="row">
+  <% @bookings.each do |booking| %>
+    <div class="col">
+    <%= booking.reservation_begin %>
+    <%= booking.reservation_end %>
+    <%= booking.transport.brand %>
+    <%= booking.transport.price %>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+<div class="container2">
+  <div class="row">
+    <% @transports.each do |transport| %>
+      <div class="col">
+      <%= transport.brand %>
+      <%= transport.horse %>
+      <%= transport.year %>
+      <%= transport.price %>
+      </div>
+    <% end %>
+    </div>
+</div>
+</div>
