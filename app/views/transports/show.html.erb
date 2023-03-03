@@ -1,4 +1,5 @@
 <h1>Transport - <%= @transport.brand %></h1>
+
 <div class="container d-flex">
     <div class="card-product">
       <div class="card-image">
@@ -11,13 +12,20 @@
         <% end %>
       </div>
       <div class="card-product-infos">
-          <p> Brand : <%= @transport.brand %></p>
+          <h2> Brand : <%= @transport.brand %></h2>
           <p> Power : <%= @transport.horse %></p>
           <p> Year : <%= @transport.year %></p>
-          <p> Price per day : <%= @transport.price %> $</p>
+          <br>
+          <br>
+          <h2> Price per day : <%= @transport.price %> $</h2>
+          <br>
+          <br>
+          <br>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nobis consectetur voluptates ex officia maiores vel suscipit necessitatibus est sapiente. Neque, quibusdam. Ab pariatur animi excepturi cum omnis dolore nobis.</p>
       </div>
     </div>
 </div>
+
 <div class="containers">
   <div class="btn-home"><%= link_to 'Back to transports', root_path %></div>
   <div class="btn-home"> <%= link_to "Delete", transport_path(@transport.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></div>
