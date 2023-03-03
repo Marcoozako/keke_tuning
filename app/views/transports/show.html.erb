@@ -1,4 +1,5 @@
 <h1>Transport - <%= @transport.brand %></h1>
+
 <div class="container d-flex">
     <div class="card-product">
       <div class="card-image">
@@ -19,6 +20,7 @@
       </div>
     </div>
 </div>
+
 <div class="containers">
   <div class="btn-home"><%= link_to 'Back to transports', root_path %></div>
   <div class="btn-home"><%= link_to 'Book now', new_transport_booking_path(@transport.id) %></div>
