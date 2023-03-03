@@ -4,11 +4,11 @@
   <div class="row">
     <div class="col">
       <%= simple_form_for @transport do |f| %>
-        <%= f.input :brand, placeholder: "Write the type of transport" %>
-        <%= f.input :horse, placeholder: "Which power" %>
-        <%= f.input :year, placeholder: "Year" %>
-        <%= f.input :price, placeholder: "Price per day" %>
-        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <p><%= f.input :brand, placeholder: "Write the type of transport" %></p>
+      <p><%= f.input :horse, placeholder: "Which power" %></p>
+      <p><%= f.input :year, placeholder: "Year" %></p>
+      <p><%= f.input :price, placeholder: "Price per day" %></p>
+      <p><%= f.input :photos, as: :file, input_html: { multiple: true } %></p>
         <%= f.submit "Submit list", class: "btn btn-primary" %>
       <% end %>
     </div>
