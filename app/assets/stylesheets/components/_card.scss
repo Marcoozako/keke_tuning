@@ -60,11 +60,6 @@
 }
 
 
-// .card img {
-//   width: 100%;
-//   border-radius: 3px;
-//   object-fit: center;
-// }
 p {
   color: #fff;
   font-family: $body-font, sans-serif;
@@ -133,6 +128,11 @@ h2{
   padding: 16px;
   display: flex-item;
   justify-content: center;
-  // width: 175px;
-  // height: 190px;
+}
+
+.quick {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -1,29 +1,29 @@
-<h1>Your bookings</h1>
-
-<div class="dashboard d-flex text-white">
-<div class="container1">
-  <div class="row">
-  <% @bookings.each do |booking| %>
-    <div class="col">
-    <%= booking.reservation_begin %>
-    <%= booking.reservation_end %>
-    <%= booking.transport.brand %>
-    <%= booking.transport.price %>
-    </div>
-  <% end %>
-  </div>
-</div>
-
-<div class="container2">
-  <div class="row">
-    <% @transports.each do |transport| %>
-      <div class="col">
-      <%= transport.brand %>
-      <%= transport.horse %>
-      <%= transport.year %>
-      <%= transport.price %>
+<div class="booking">
+  <div class="joe">
+    <h1>Your bookings</h1>
+    <% @bookings.each do |booking| %>
+      <div class="text-white" text>
+        <p>Start :<%= booking.reservation_begin %></p>
+        <p>End-date : <%= booking.reservation_end %></p>
+        <p>Modèle : <%= booking.transport.brand %></p>
+        <p>Price : <%= booking.transport.price %> by day</p>
+        <br>
       </div>
     <% end %>
-    </div>
-</div>
+  </div>
+
+
+  <div class="joe">
+    <h1>My Garage</h1>
+    <div class="">
+      <% @transports.each do |transport| %>
+        <div class="text-white">
+          <p>Modele :<%= transport.brand %></p>
+          <p>Power :<%= transport.horse %></p>
+          <p>Year : <%= transport.year %></p>
+          <p>Price : <%= transport.price %> $</p>
+          <br>
+        </div>
+      <% end %>
+  </div>
 </div>

@@ -13,8 +13,10 @@
       <ul class="navbar-nav me-auto">
         <li class="nav-item active">
           <% if user_signed_in? %>
-          <%= link_to "Log Out", destroy_user_session_path, data: {turbo_method: :delete}, class: 'nav-link' %></a>
-          <%= link_to "Your Bookings", bookings_path, class: 'nav-link' %></a>
+          <div class= 'content'>
+            <%= link_to "Your Bookings", bookings_path, class: 'nav-link' %></a>
+            <%= link_to "Log Out", destroy_user_session_path, data: {turbo_method: :delete}, class: 'nav-link' %>
+          </div>
 
           <% else %>
           <%=link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
@@ -24,11 +26,11 @@
             <%= link_to 'Create Car', new_transport_path, class: 'nav-link' %>
           </li>
           <li class="nav-item dropdown">
-            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGFuaW1hbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" />
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Tuning</a>
-              <a class="dropdown-item" href="#">Dashbord</a>
-              <a class="dropdown-item" data-turbo-method="delete" href="#">Deconnect</a>
+              <%= link_to "Your Bookings", bookings_path, class: 'dropdown-item' %>
+              <%= link_to "Create a car", new_transport_path, class: 'dropdown-item' %>
+              <%= link_to "Log Out", destroy_user_session_path, data: {turbo_method: :delete}, class: 'dropdown-item' %>
             </div>
           </li>
       </ul>

@@ -1,15 +1,20 @@
+
 .input {
-  border-radius: 10px;
-  outline: 2px solid #FEBF00;
-  border: 0;
-  font-family: $body-font;
-  background-color: #e2e2e2;
-  outline-offset: 3px;
-  padding: 10px 1rem;
-  transition: 0.25s;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  width: 82%;
+  padding: 1em;
+  background-color: #ccc;
+  box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+  transition: 300ms ease-in-out;
 }
 
 .input:focus {
-  outline-offset: 5px;
-  background-color: #fff
+  background-color: white;
+  transform: scale(1.05);
+  box-shadow: 13px 13px 100px #969696,
+            -13px -13px 100px #ffffff;
 }
